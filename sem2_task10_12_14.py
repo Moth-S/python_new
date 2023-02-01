@@ -6,18 +6,39 @@
 # 5 -> 1 0 1 1 0
 # 2
 
-n = int(input())
-s = ''
+# n = int(input())
+# s = ''
 
-for i in range(n):
-    coin = input()
-    s += coin
+# for i in range(n):
+#     coin = input()
+#     s += coin
 
-if s.count('0') > s.count('1'):
-    print(f"flip {s.count('1')} coins")
-else:
-    print(f"flip {s.count('0')} coins")
+# if s.count('0') > s.count('1'):
+#     print(f"flip {s.count('1')} coins")
+# else:
+#     print(f"flip {s.count('0')} coins")
 
+# _______________________________________________________________________________________________________
+
+# Задача 12: Петя и Катя – брат и сестра. Петя – студент, а Катя – школьница.
+# Петя помогает Кате по математике. Он задумывает два натуральных числа X и Y (X,Y≤1000),
+# а Катя должна их отгадать. Для этого Петя делает две подсказки. Он называет сумму этих чисел S и их произведение P.
+#  Помогите Кате отгадать задуманные Петей числа.
+
+# 4 4 -> 2 2
+# 5 6 -> 2 3
+
+summa = int(input('S='))
+product = int(input('P='))
+flag = False
+
+for x in range(1001):
+    for y in range(1001):
+        if ((x+y) == summa) and ((x*y) == product):
+            print(x, y)
+            flag = True
+    if flag:
+        break
 
 
 
