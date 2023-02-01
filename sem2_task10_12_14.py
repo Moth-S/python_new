@@ -28,18 +28,27 @@
 # 4 4 -> 2 2
 # 5 6 -> 2 3
 
-summa = int(input('S='))
-product = int(input('P='))
-flag = False
+# summa = int(input('S='))
+# product = int(input('P='))
+# flag = False
 
-for x in range(1001):
-    for y in range(1001):
-        if ((x+y) == summa) and ((x*y) == product):
-            print(x, y)
-            flag = True
-    if flag:
-        break
+# for x in range(1001):
+#     for y in range(1001):
+#         if ((x+y) == summa) and ((x*y) == product):
+#             print(x, y)
+#             flag = True
+#     if flag:
+#         break
+
+# ________________________________________________________________________________________________________
+
+# Задача 14: Требуется вывести все целые степени двойки (т.е. числа вида 2k), не превосходящие числа N.
+
+# 10 -> 1 2 4 8
 
 
-
-
+N = int(input())
+num = 1
+while (num <= N):
+    print(num)
+    num *= 2
