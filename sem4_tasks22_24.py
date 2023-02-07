@@ -8,16 +8,44 @@
 # 3 6 9 12 15 18
 # 6 12
 
-n = int(input('Length first list: '))
-m = int(input('Length second list: '))
-lst1, lst2 = [], []
+# n = int(input('Length first list: '))
+# m = int(input('Length second list: '))
+# lst1, lst2 = [], []
 
-strng1=input('input elements of 1st list (through a space): ').split()
-for i in strng1:
-    lst1.append(i)
+# strng1=input('input elements of 1st list (through a space): ').split()
+# for i in strng1:
+#     lst1.append(i)
 
-strng2=input('input elements of 2nd list (through a space): ').split()
-for j in strng2:
-    lst2.append(j)
+# strng2=input('input elements of 2nd list (through a space): ').split()
+# for j in strng2:
+#     lst2.append(j)
 
-print(set(lst1) & set(lst2))
+# print(set(lst1) & set(lst2))
+
+#___________________________________________________________________________________________
+
+# Задача 24: В фермерском хозяйстве в Карелии выращивают чернику. Она растет на
+# круглой грядке, причем кусты высажены только по окружности. Таким образом, у
+# каждого куста есть ровно два соседних. Всего на грядке растет N кустов.
+# Эти кусты обладают разной урожайностью, поэтому ко времени сбора на них
+# выросло различное число ягод – на i-ом кусте выросло ai
+#  ягод.
+# В этом фермерском хозяйстве внедрена система автоматического сбора черники.
+# Эта система состоит из управляющего модуля и нескольких собирающих модулей.
+# Собирающий модуль за один заход, находясь непосредственно перед некоторым
+# кустом, собирает ягоды с этого куста и с двух соседних с ним.
+# Напишите программу для нахождения максимального числа ягод, которое может
+# собрать за один заход собирающий модуль, находясь перед некоторым кустом
+# заданной во входном файле грядки.
+
+
+amount_bushes_blueberries=int(input('amount bushes: '))
+bluebers = input('input amount blueberries from one bush (through a space): ').split()
+rez_lst=[]
+
+for i in range(1, len(bluebers)-1):
+     rez_lst.append(int(bluebers[i-1])+int(bluebers[i])+int(bluebers[i+1]))
+     
+rez_lst.append(int(bluebers[0])+int(bluebers[-2])+int(bluebers[-1]))
+rez_lst.append(int(bluebers[0])+int(bluebers[1])+int(bluebers[-1]))
+print(max(rez_lst))
