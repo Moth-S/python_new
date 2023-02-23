@@ -11,9 +11,32 @@
 # Тучи разошлись
 # Листва зеленела
 
-with open('file.txt', 'r', encoding='utf-8') as file:
-    f = file.read().splitlines()
-    num_end_words = int(input(f'Number of last rows (from 1 to {len(f)}): '))
+# with open('file.txt', 'r', encoding='utf-8') as file:
+#     f = file.read().splitlines()
+#     num_end_words = int(input(f'Number of last rows (from 1 to {len(f)}): '))
 
-    for elem in range(num_end_words*(-1), 0):
-        print(f[elem])
+#     for elem in range(num_end_words*(-1), 0):
+#         print(f[elem])
+
+# ____________________________________________________________________________________________________
+
+# Документ «article.txt» содержит следующий текст:
+# Вечерело
+# Жужжали мухи
+# Светил фонарик
+# Кипела вода в чайнике
+# Венера зажглась на небе
+# Деревья шумели
+# Тучи разошлись
+# Листва зеленела
+
+# Требуется реализовать функцию longest_words(file), которая выводит слово,
+# имеющее максимальную длину (или список слов, если таковых несколько).
+
+with open('article.txt', 'r', encoding='utf-8') as file:
+    text = file.read().split()
+    max_word = 0
+
+    [max_word := len(word) for word in text if len(word) > max_word]
+    [print(word) for word in text if len(word) == max_word]
+
